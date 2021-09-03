@@ -1,0 +1,11 @@
+<launch>
+
+<node pkg="calibrate" type="calibrate_node" name="calibrate_node" clear_params="true" output="screen" launch-prefix="gdb -ex run --args">
+  <param name="source_topic" value="/odom1" />
+  <param name="target_topic" value="/pose_odometry" />
+  <param name="bag_name" value="/home/lyb/bags/zuhedaohang/calibrate_data/2021-09-03-10-55-18.bag" />
+  <param name="save_file_name" value="/home/lyb/bags/zuhedaohang/calibrate_data/txt/points_0902.txt" />
+  <param name="use_debug" value="true" />
+</node>
+
+</launch>

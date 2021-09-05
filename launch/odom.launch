@@ -1,0 +1,16 @@
+<launch>
+
+<param name="use_sim_time" value="true" />
+
+<node pkg="calibrate" type="odom_handle" name="odom_handle" clear_params="true" output="screen">
+  <param name="topic_name" value="/odom1" />
+  <param name="save_file_name" value="/home/lyb/open_source/src/calibrate/calibrate_data/txt/points_odom1.txt" />
+  <param name="path_name" value="odom1_path" />
+</node>
+
+<node pkg="calibrate" type="odom_handle" name="odom_handle_1" clear_params="true" output="screen">
+  <param name="topic_name" value="/pose_odometry" />
+  <param name="save_file_name" value="/home/lyb/open_source/src/calibrate/calibrate_data/txt/points_pose_odometry.txt" />
+  <param name="path_name" value="odom2_path" />
+</node>
+</launch>

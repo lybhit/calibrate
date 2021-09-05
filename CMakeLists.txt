@@ -99,6 +99,9 @@ target_link_libraries(pcl_matcher ${PCL_LIBRARIES})
 
 add_executable(${PROJECT_NAME}_node src/calibrate_node.cpp)
 target_link_libraries(${PROJECT_NAME}_node  extract_data matcher pcl_matcher ${catkin_LIBRARIES})
+
+add_executable(odom_handle src/common/listen_odom.cpp)
+target_link_libraries(odom_handle ${catkin_LIBRARIES})
 #############
 ## Install ##
 #############

@@ -44,7 +44,7 @@ int main(int argc, char** argv)
 
     std::vector<calibrate::Point3d> pts_1;
     std::vector<calibrate::Point3d> pts_2;
-    for(int i = 0; i < pp.size(); i++)
+    for(int i = 0; i < (int)pp.size(); i++)
     {
         pts_2.emplace_back(calibrate::Point3d(pp[i].first.x(), pp[i].first.y(), pp[i].first.z()));
         pts_1.emplace_back(calibrate::Point3d(pp[i].second.x(), pp[i].second.y(), pp[i].second.z()));

@@ -117,7 +117,7 @@ namespace calibrate{
 
         for(auto &elem : points_pair_)
         {
-            out_file_ << elem.first.x() << ' ' << elem.first.y() << ' ' << elem.first.z() << ' ' << elem.first.w()  - ref_time<< ', ' 
+            out_file_ << elem.first.x() << ' ' << elem.first.y() << ' ' << elem.first.z() << ' ' << elem.first.w() - ref_time<< ' ' 
                                 << elem.second.x() << ' '<< elem.second.y() << ' ' << elem.second.z() << ' ' << elem.second.w() - ref_time << '\n';
         }
 

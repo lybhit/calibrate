@@ -1,4 +1,6 @@
 #include "icp_pcl_matcher.h"
+#include <pcl/io/pcd_io.h>
+#include <pcl/point_types.h>
 // #include <memory>
 
 namespace calibrate{
@@ -20,6 +22,10 @@ void IcpMatcher::match(const std::vector<Point3d> &pts_1, const std::vector<Poin
     icp.setInputTarget(target_);
     pcl::PointCloud<pointT>::Ptr unused_result(new pcl::PointCloud<pointT>());
     icp.align(*unused_result);
+
+    pcl::io::savePCDFileASCII ("/home/lyb/open_source/src/calibrate/calibrate_data/pcd/source.pcd", *source_);
+    pcl::io::savePCDFileASCII ("/home/lyb/open_source/src/calibrate/calibrate_data/pcd/target.pcd", *target_);
+    pcl::io::savePCDFileASCII ("/home/lyb/open_source/src/calibrate/calibrate_data/pcd/align.pcd", *unused_result);
 
     // ROS_INFO("ICP fitnessScore = %f", icp.getFitnessScore());
 
